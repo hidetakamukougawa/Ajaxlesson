@@ -17,11 +17,25 @@
 
 <div class="container">
     <div id="img_unit">
-        <div class="photo">
-            <img src="img/img01.jpg">
-            <div class="inner"><p> こっちは貫禄ありすぎ<span>sansaisan</span></p></div>
-        </div>
     </div>
 </div><!-- container -->
+
+<script>
+var ajax = new XMLHttpRequest();
+ajax.open('GET', 'https://h2o-space.com/htmlbook/images.php');
+ajax.responseType = 'json';
+ajax.send(null);
+
+ajax.onreadystatechange = function() {
+    if(ajax.readyState === XMLHttpRequest.DONE && ajax.status === 200) {
+        for(var i=0; i<this.response.length; i++) {
+            var data = this.response[i];
+
+            var img = document.createElement('img');
+            
+        }
+    }
+}
+</script>
 </body>
 </html>
